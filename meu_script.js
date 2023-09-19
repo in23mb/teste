@@ -1,8 +1,8 @@
 PennController.ResetPerfix(null);
 
-Sequence("Participante", "Intrucoes", randomize"Experimento", SendResults(),"Final")
+Sequence("Participante", "Intrucoes", randomize("Experimento"), SendResults(),"Final")
 
-Heaser(
+Header(
 
   defaultText
    .css("font-size", "1.2em")
@@ -56,9 +56,9 @@ newtrial("Participante",
 
 newtrial("Instrucoes"
         
-         newTextnewText("<p>INSTRUÇÕES</p>")
+         newText("<p>INSTRUÇÕES</p>")
          ,
-         newTextnewText("<p>Ouça a frase com atenção e depois clique em cima de uma sentenças, <strong>A</strong> ou <strong>B</strong></p>")
+         newText("<p>Ouça a frase com atenção e depois clique em cima de uma sentenças, <strong>A</strong> ou <strong>B</strong></p>")
          ,
 
          newButton("Iniciar")
