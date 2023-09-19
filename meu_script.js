@@ -72,7 +72,7 @@ Template("tabela_scrippt_auditivo.csv",
 
                          newAudio("AudioExperimento", row.AudioExperimento)
                             .play()
-                            ,
+                         ,
                          
                         newImage("alto_falante_icone.png")
                             .size( 90 , 90 )
