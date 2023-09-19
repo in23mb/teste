@@ -54,7 +54,7 @@ newtrial("Participante",
 
 .log("NOME"  , getVar("NOME") )
 
-newtrial("Instrucoes"
+newtrial("Instrucoes",
         
          newText("<p>INSTRUÇÕES</p>")
          ,
