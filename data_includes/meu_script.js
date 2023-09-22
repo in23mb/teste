@@ -1,6 +1,6 @@
 PennController.ResetPrefix(null);
 
-Sequence("Participante", "Intrucoes", randomize("Experimento"), SendResults(), "Final")
+Sequence("Participante", "Intrucoes", randomize("Experimento"), SendResults(), "Final");
 
 Header(
 
@@ -46,29 +46,29 @@ newtrial("Participante",
         newButton("Iniciar")
         ,
 
-        newVar("NOME")
-           .global()
-           .set( getTextInput("Nome") )
+  newVar("NOME")
+     .global()
+     .set( getTextInput("Nome") )
   
 )
 
 .log("NOME"  , getVar("NOME") )
 
-newtrial("Instrucoes",
+newTrial("Instrucoes",
         
-         newText("<p>INSTRUÇÕES</p>")
-         ,
-         newText("<p>Ouça a frase com atenção e depois clique em cima de uma sentenças, <strong>A</strong> ou <strong>B</strong>, que você considerar a melhor interpretação.</p>")
-         ,
+   newText("<p>INSTRUÇÕES</p>")
+   ,
+   newText("<p>Ouça a frase com atenção e depois clique em cima de uma sentenças, <strong>A</strong> ou <strong>B</strong>, que você considerar a melhor interpretação.</p>")
+   ,
 
-         newButton("Iniciar")
-            .log()
+   newButton("Iniciar")
+      .log()
            
 )
 
 Template("tabela_scrippt_auditivo.csv", 
          
-     row => newTrial( "Experimento",
+     varible => newTrial( "Experimento",
 
         newAudio("AudioExperimento", row.AudioExperimento)
            .play()
@@ -95,20 +95,20 @@ Template("tabela_scrippt_auditivo.csv",
         ,
                          
         newCanvas( 1400 , 700 )
-        .add( 150 , 100 , getText("A") )
-        .add( 150 , 100 , getText("B") )
-        .print() 
+           .add( 150 , 100 , getText("A") )
+           .add( 150 , 100 , getText("B") )
+           .print() 
         ,
                          
         newSelector()
-        .add( getText("A") , getText("B") )
-        .keys("A","B")
-        .log()
-        .wait()
-        )
+           .add( getText("A") , getText("B") )
+           .keys("A","B")
+           .log()
+           .wait()
+    )
          
-        .log("Group", row.Group)
-        .log("Item", row.Item)
+    .log("Group", row.Group)
+    .log("Item", row.Item)
 );
 
 newTrial( "Final" ,
@@ -123,5 +123,6 @@ newTrial( "Final" ,
       .wait()        
 )
 
+.setOption("countsForProgressBar",false);           
 
 .setOption("countsForProgressBar",false);
